@@ -1,26 +1,41 @@
-import 'dart:io';
+import 'dart:html';
 
-void main(List<String> args) {
-  int age;
-  String? name;
-
-  print('What is your name?');
-  name = stdin.readLineSync();
-
-  while (true) {
-    try{
-      print('Enter your age');
-      age = int.parse(stdin.readLineSync()!);
-      break;
-      } on FormatException {
-        print('Invalid age! Please enter a number.');
-    }
-  }
-
-  if (age >= 18) {
-    print('$name is adult');
-  } else {
-    print('$name is not adult');
-  }
-
+main() {
+  querySelector('#Hip!').onClick.listen(muuta);
+  querySelector('#Hei!').onClick.listen(muuta);
 }
+
+muuta(e) {
+  var elementti = querySelector('#Hip!');
+    elementti.text = 'Hip!';
+}
+
+pienenna(e) {
+  var elementti = querySelector('#luku');
+  var luku = int.parse(elementti.text);
+  luku = luku - 1;
+  elementti.text = '$luku';
+}
+
+
+<button id='laskuri-nappi'>0</button>
+main.dart
+/*
+import 'dart:html';
+
+main() {
+  var laskuri = querySelector('#laskuri-nappi');
+  laskuri.onClick.listen(kasvata);
+}
+
+kasvata(e) {
+  var nappi = querySelector('#laskuri-nappi');
+  var arvo = int.parse(nappi.text);
+  arvo = arvo + 1;
+  if (arvo > 3) {
+    arvo = 0;
+  }
+
+  nappi.text = '$arvo';
+}
+*/
