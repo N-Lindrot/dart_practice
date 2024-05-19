@@ -13,9 +13,10 @@ toString Override: The toString method in the ForecastDay class is overridden to
 Output: Finally, the print statement outputs the forecast list from the londonWeather object, which now contains a list of formatted ForecastDay strings.
 */
 
-// CONTINUE THE TASK BY PRINTINGONLY A LITTLE
+// CONTINUE THE TASK BY PRINTING ONLY A PART OF THE DATA
 
 import 'dart:convert';
+import 'dart:io';
 
 void main(List<String> args) {  // Add jsonData to a const. jsonData String starts with { 'and' 'data' 'data'{'data'} 'data' 'etc' 'and ends with' }
   const jsonData = '''
@@ -56,18 +57,49 @@ void main(List<String> args) {  // Add jsonData to a const. jsonData String star
       "temperatureLow": 11,
       "condition": "Rainy",
       "precipitationProbability": 80
+    },
+    {
+      "date": "2024-05-25",
+      "temperatureHigh": 19,
+      "temperatureLow": 15,
+      "condition": "Rainy",
+      "precipitationProbability": 70
     }
       ]
     }
   ''';
-  print('----------Choose the date----------');
-  print(londonWeather.forecast.) // LETS CONTINUE
+  // LETS CONTINUE AND ASK USER A DATE FOR THE WEATHER
   
-  // WeatherData Object is created. WeatherData constructor is used here
+  // WeatherData Object is created. WeatherData constructor is used here. lOCATION AND jsonData is used as parameter
   WeatherData londonWeather = WeatherData('London, UK', jsonData);
 
+  print(londonWeather.location);
+  print('----------Choose the date from the list----------');
+  // using for in loops to get into forecastDay class from londonWeather class that gets its data from WeatherData object
+  for (var forecastDay in londonWeather.forecast) {  
+    print(forecastDay.date);
+  }
+
+  print('Enter the date in (YYYY-MM-DD) format');
+  var oneDay = stdin.readLineSync();
+
+  ForecastDay? chosenForecast;
+  for (var forecastDay in londonWeather.forecast) {
+    if (oneDay == forecastDay.date) {
+      chosenForecast = forecastDay;
+      break;
+    }
+  }
+
+  if (chosenForecast != null) {
+    print(chosenForecast);
+  } else {
+    print('Invalid date or forecast nto found');
+  }
+  
+
   // LondonWeatherObject and forecast class is used to print
-  print(londonWeather.forecast);
+  // print(londonWeather.forecast);
 }
 
 class WeatherData {
@@ -124,6 +156,11 @@ class ForecastDay {
     this.precipitationProbability
   );
   // so far this will return instances of this method (Instance of 'ForecastDay').
+
+  //@override // Override the default toString() method
+  //String toString() {
+  //  return 'Date: $date, High: $temperatureHigh°C, Low: $temperatureLow°C, Condition: $condition, Precipitation: $precipitationProbability%';
+  //}
 
   @override // Override the default toString() method
   String toString() {
