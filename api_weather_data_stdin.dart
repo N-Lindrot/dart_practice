@@ -13,9 +13,11 @@ toString Override: The toString method in the ForecastDay class is overridden to
 Output: Finally, the print statement outputs the forecast list from the londonWeather object, which now contains a list of formatted ForecastDay strings.
 */
 
+// CONTINUE THE TASK BY PRINTINGONLY A LITTLE
+
 import 'dart:convert';
 
-void main(List<String> args) {  // Add jsonData to a const.
+void main(List<String> args) {  // Add jsonData to a const. jsonData String starts with { 'and' 'data' 'data'{'data'} 'data' 'etc' 'and ends with' }
   const jsonData = '''
   {
     "location": "London, UK",
@@ -58,6 +60,9 @@ void main(List<String> args) {  // Add jsonData to a const.
       ]
     }
   ''';
+  print('----------Choose the date----------');
+  print(londonWeather.forecast.) // LETS CONTINUE
+  
   // WeatherData Object is created. WeatherData constructor is used here
   WeatherData londonWeather = WeatherData('London, UK', jsonData);
 
