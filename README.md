@@ -11,29 +11,25 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages). 
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+TODO: This is a collection of tasks to practice using Dart languages. I will be adding all types of tasks i did to learn programming and improve as I go
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+Different programming exercise are kept in different folder.
+All the programs are inside bin folder and its sub folder
 
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+`/bin/arrow_function` folder contains basic tasks to practice arrow function. 
+`/bin/dart_minitask` folder contains all types of small programs
 
 ```dart
 const like = 'sample';
+const and = 'sampleOne';
+const this = 'sampleTwo';
 ```
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+TODO: So far nothing else is here.
